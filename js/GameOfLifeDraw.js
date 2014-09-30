@@ -44,8 +44,6 @@ function draw(grid){
 		cxt = c.get(0).getContext("2d");
 	}
 	
-	cxt.lineWidth = lineWidth;
-	cxt.strokeStyle = "#FFFFFF"; //Colour for borders
 	for (var i = 0; i < gridHeight; ++i){
 		for (var j = 0; j < gridWidth; ++j){
 			if (redraw || oldGrid[i][j] != grid[i][j]){
@@ -60,19 +58,19 @@ function draw(grid){
 				//Calculate the left-top coordinate of grid
 				var top = i * gridSize + borderOffset + lineWidth;
 				var left = j * gridSize + borderOffset + lineWidth;
-			
+				
 				cxt.rect(left, top, gridSize - lineWidth, gridSize - lineWidth);
 				cxt.fill();
-				if (true){
-					//cxt.stroke();
-				}
 				cxt.closePath();
+				
+				//Record the old board
 				oldGrid[i][j] = grid[i][j];
 			}
 		}
 	}
 }
 
+//Calculate the mouse position in board
 function getPos(coorX, coorY){
 	return {
 		y: parseInt((coorX - borderOffset) / gridSize),

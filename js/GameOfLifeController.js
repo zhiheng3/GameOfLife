@@ -66,6 +66,7 @@ $(document).on("click", "#less", function(){
 });
 */
 
+//Mouse event: Start button
 $(document).on("click", "#start", function(){
 	if ($("#start").text() == "Start"){
 		gameStart();
@@ -75,17 +76,21 @@ $(document).on("click", "#start", function(){
 	}
 });
 
+//Mouse event: Random button
 $(document).on("click", "#random", function(){
 	gamePause();
 	initializeRandom(0.25);
 });
 
+//Mouse event: Clear button
 $(document).on("click", "#clear", function(){
 	gamePause();
 	initalizeGrid();
 	draw(grid);
 });
 
+//Mouse event: Click on the board
+//Change status of the clicked cell
 $(document).on("click", "#grid", function(e){
 	if ($("#start").text() == "Pause"){
 		return false;
@@ -102,6 +107,7 @@ $(document).on("click", "#grid", function(e){
 	draw(grid);
 });
 
+//Slider Controller
 $(function(){
     $("#periodSlider").slider({
 		min: 4,

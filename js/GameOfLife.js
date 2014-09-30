@@ -88,14 +88,14 @@ function nextGeneration(){
 }
 
 function testNextGeneration(testGrid){
-	width = 4;
-	height = 4;
-	for (var i = 0; i < height; i++){
-   		grid[i] = testGrid[i].concat();
-    } 
+	height = testGrid.length;
+	width = testGrid[0].length;
+	grid = new Array();
+    for (var i = 0; i < height; i++){
+   		grid[i] = testGrid[i].concat(); 
+   	}
     nextGeneration();
     return(grid);
-
 }
 
 function update(){
