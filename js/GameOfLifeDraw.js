@@ -30,6 +30,8 @@ function draw(grid){
 	canvasHeight += borderOffset * 2;
 	canvasWidth += borderOffset * 2;
 	
+	$(".page").css("width", 250 + canvasWidth);
+	
 	if (oldHeight != screenHeight){
 		redraw = true;
 		oldHeight = screenHeight;
